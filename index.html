@@ -583,7 +583,7 @@
             startPosition: { x: 0, y: 0.8, z: 4.7 },
         },
         scene: {
-            origin: { x: 0, y: -1, z: 0 },
+            origin: { x: 0, y: 0, z: 0 },
             targetLimit: { x: 2.5, z: 2.5 }
         },
         animation: {
@@ -719,7 +719,7 @@
     controls.zoomSpeed = 0.5;
 
 	// ←– Shoot the target at your origin
-	controls.target.set(0, 0, 0);
+	controls.target.set(1.7, -1.7, 0);
 	controls.update();  // make OrbitControls re-sync to that new target
 
     let sceneCenter = new Vector3(parameters.scene.origin.x, parameters.scene.origin.y, parameters.scene.origin.z);
@@ -811,7 +811,7 @@
             scale: 1
         },
         splat2: {
-            source: 'https://lumalabs.ai/embed/346e18fd-6b88-43c2-b337-d7075c53a240?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false',
+            source: 'https://lumalabs.ai/embed/bb58b130-2d96-4bfb-9ff3-9cd2318954a8?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false',
             position: new Vector3(0, 0, 0),
             rotation: { x: 0, y: 0, z: 0 },
             scale: 1
