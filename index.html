@@ -1551,11 +1551,11 @@
             const menuHeight = menuRect.height;
             const logoHeight = 153; // Base logo height
             
-            // Center the logo vertically with the menu container
-            const logoBottom = menuBottom + (menuHeight / 2) - (logoHeight * scaleFactor / 2);
+            // Center the logo vertically with the menu container, with visual balance adjustments
+            const logoBottom = menuBottom + (menuHeight / 2) - (logoHeight * scaleFactor / 2) - 10; // Move down 10px
             
             hansenLogo.style.bottom = logoBottom + 'px';
-            hansenLogo.style.right = menuRight + 'px';
+            hansenLogo.style.right = (menuRight + 15) + 'px'; // Move right 15px more
             hansenLogo.style.webkitTransform = 'scale(' + scaleFactor + ')';
             hansenLogo.style.transform = 'scale(' + scaleFactor + ')';
         }
