@@ -54,6 +54,7 @@
             pointer-events: none;
             opacity: 0.9;
             transition: opacity 0.3s ease;
+            transform-origin: center center;
         }
 
         #hansenLogo:hover {
@@ -1457,6 +1458,7 @@
     // Original base spacing and sizes:
     const baseMenuLeft = 20;
     const baseMenuBottom = 20;
+    const baseMenuRight = 20; // For Hansen logo
     const baseDetailsTop = 60;
     const baseDetailsBottom = 60;
     const baseDetailsLeft = 20;
@@ -1493,6 +1495,7 @@
 
         let menuLeft = baseMenuLeft;
         let menuBottom = baseMenuBottom;
+        let menuRight = baseMenuRight; // For Hansen logo
         let detailsTop = baseDetailsTop;
         let detailsBottom = baseDetailsBottom;
         let detailsLeft = baseDetailsLeft;
@@ -1507,6 +1510,7 @@
         if (mode === 'desktop') {
             menuLeft += 20; 
             menuBottom += 20;
+            menuRight += 20; // For Hansen logo
             detailsLeft += 20;
             detailsRight += 20;
             detailsTop += 20;
@@ -1520,6 +1524,7 @@
             // Mobile
             menuLeft = baseMenuLeft - 5;
             menuBottom = baseMenuBottom - 5;
+            menuRight = baseMenuRight - 5; // For Hansen logo
             detailsLeft = baseDetailsLeft - 5;
             detailsRight = baseDetailsRight - 5;
             detailsTop = baseDetailsTop - 5;
@@ -1537,6 +1542,15 @@
 
         menuContainer.style.webkitTransform = 'scale(' + scaleFactor + ')';
         menuContainer.style.transform = 'scale(' + scaleFactor + ')';
+
+        // Position Hansen logo
+        const hansenLogo = document.getElementById('hansenLogo');
+        if (hansenLogo) {
+            hansenLogo.style.bottom = menuBottom + 'px';
+            hansenLogo.style.right = menuRight + 'px';
+            hansenLogo.style.webkitTransform = 'scale(' + scaleFactor + ')';
+            hansenLogo.style.transform = 'scale(' + scaleFactor + ')';
+        }
 
         detailsBox.style.top = detailsTop + 'px';
         detailsBox.style.bottom = detailsBottom + 'px';
