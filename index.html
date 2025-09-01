@@ -1546,7 +1546,15 @@
         // Position Hansen logo
         const hansenLogo = document.getElementById('hansenLogo');
         if (hansenLogo) {
-            hansenLogo.style.bottom = menuBottom + 'px';
+            // Get menu container dimensions for vertical centering
+            const menuRect = menuContainer.getBoundingClientRect();
+            const menuHeight = menuRect.height;
+            const logoHeight = 180; // Base logo height
+            
+            // Center the logo vertically with the menu container
+            const logoBottom = menuBottom + (menuHeight / 2) - (logoHeight * scaleFactor / 2);
+            
+            hansenLogo.style.bottom = logoBottom + 'px';
             hansenLogo.style.right = menuRight + 'px';
             hansenLogo.style.webkitTransform = 'scale(' + scaleFactor + ')';
             hansenLogo.style.transform = 'scale(' + scaleFactor + ')';
